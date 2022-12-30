@@ -8,8 +8,9 @@ vcal db 10,13, 'PASSWORD : $'
 vcal1 db 10,13, 'MAAF KEYWORD YANG ANDA MASUKKAN SALAH $'
 vcal2 db 10,13, 'SELAMAT DATANG TUAN$'
 vcal3 db 10,13, 'Nama : Muhammad Abu bakar Umar Usman Ali Abdus Salam$'
-vcal4 db 10,13, 'Nim : 2200018011 '
-vcal5 db 10,13, 'Kelas : A'
+vcal4 db 10,13, 'Nim : 2200018011$ '
+vcal5 db 10,13, 'Kelas : A$'
+vcal6 db 10,13, 'Ttg : Timika, 4 Februari 2004$'
 
 proses:
 mov ah, 09h
@@ -191,6 +192,15 @@ int 21h
 
 mov ah, 09h
 lea dx, vcal5
+int 21h
+
+
+mov ah, 02h
+mov dl, 2Ah
+int 21h
+
+mov ah, 09h
+lea dx, vcal6
 int 21h
 
 int 20h
